@@ -17,6 +17,8 @@ public class PlayerMoveManager : MonoBehaviour
 
     private Vector2 velocity = Vector2.zero;
 
+    public int dir = 0;
+
 
 
     // Start is called before the first frame update
@@ -38,6 +40,17 @@ public class PlayerMoveManager : MonoBehaviour
         velocity = _moveValue*vitesse*Time.fixedDeltaTime;
         rb.velocity = new Vector2(velocity[0], rb.velocity.y);
 
+        if (_moveValue.x > 0)
+        {
+            dir = 1;
+        }
+        else if (_moveValue.x < 0)
+        {
+            dir = -1;
+        }
+
+
+
     }
 
 
@@ -47,6 +60,13 @@ public class PlayerMoveManager : MonoBehaviour
     {
         if (jumpAction.triggered){
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
+
+        if (dir == 1 && GetComponent<SpriteRenderer>().flipX == true){
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if (dir == -1 && GetComponent<SpriteRenderer>().flipX == false){
+            GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 }

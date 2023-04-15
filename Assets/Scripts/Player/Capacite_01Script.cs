@@ -19,9 +19,13 @@ public class Capacite_01Script : MonoBehaviour
     private float timeReloadCapacite_01Ecoule;
     private bool capacite_01Charge = true;
 
+    private PlayerMoveManager player;
+    
+
 
     void Start()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerMoveManager>();
         manager = GameManager.GetInstance();
         inputs = manager.GetInputs();
 
@@ -36,7 +40,8 @@ public class Capacite_01Script : MonoBehaviour
             GameObject faux = Instantiate(fauxPrefab, transform.position, Quaternion.identity);
 
             // Obtenir la direction dans laquelle le joueur regarde
-            Vector3 direction = GetMouseDirection();
+            //Vector3 direction = GetMouseDirection();
+            Vector3 direction = new Vector3(player.dir, 0, 0);
 
             // Déplacer l'objet faux dans la direction donnée
             faux.GetComponent<Rigidbody2D>().velocity = direction * fauxSpeed;

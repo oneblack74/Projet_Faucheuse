@@ -176,6 +176,17 @@
                     "action": "Capacite_01",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58569c0d-97fc-4448-b246-43257fdf2821",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Capacite_01",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
