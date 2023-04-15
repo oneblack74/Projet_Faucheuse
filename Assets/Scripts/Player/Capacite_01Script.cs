@@ -39,12 +39,9 @@ public class Capacite_01Script : MonoBehaviour
             // Créer une instance de l'objet faux à partir du prefab
             GameObject faux = Instantiate(fauxPrefab, transform.position, Quaternion.identity);
 
-            // Obtenir la direction dans laquelle le joueur regarde
-            //Vector3 direction = GetMouseDirection();
-            Vector3 direction = new Vector3(player.dir, 0, 0);
 
             // Déplacer l'objet faux dans la direction donnée
-            faux.GetComponent<Rigidbody2D>().velocity = direction * fauxSpeed;
+            faux.GetComponent<Rigidbody2D>().velocity = new Vector3(player.dir, 0, 0); * fauxSpeed;
 
             // Stocker une référence à l'objet faux créé
             lastFaux = faux;
