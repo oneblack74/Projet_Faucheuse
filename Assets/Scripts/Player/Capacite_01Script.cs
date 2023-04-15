@@ -41,7 +41,7 @@ public class Capacite_01Script : MonoBehaviour
 
 
             // Déplacer l'objet faux dans la direction donnée
-            faux.GetComponent<Rigidbody2D>().velocity = new Vector3(player.dir, 0, 0); * fauxSpeed;
+            faux.GetComponent<Rigidbody2D>().velocity = new Vector3(player.dir, 0, 0) * fauxSpeed;
 
             // Stocker une référence à l'objet faux créé
             lastFaux = faux;
