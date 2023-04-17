@@ -7,6 +7,8 @@ public class PlayerMoveManager : MonoBehaviour
     [SerializeField] private int vitesse;
     [SerializeField] private int jumpForce;
 
+    
+
 
     private Rigidbody2D rb;
 
@@ -69,4 +71,6 @@ public class PlayerMoveManager : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
         }
     }
+
+
 }
