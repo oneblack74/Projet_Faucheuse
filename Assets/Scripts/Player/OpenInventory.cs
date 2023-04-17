@@ -10,7 +10,7 @@ public class OpenInventory : MonoBehaviour
     private GameManager manager;
     private InputAction interactAction;
 
-    private GameObject inventoryUI;
+    private Inventory inventoryUI;
 
     private bool inventoryOpen;
     
@@ -21,7 +21,7 @@ public class OpenInventory : MonoBehaviour
         isReach = false;
         inventoryOpen = false;
 
-        inventoryUI = GameObject.Find("Inventory UI");
+        inventoryUI = GameObject.Find("Inventory UI").GetComponent<Inventory>();
 
         manager = GameManager.GetInstance();
         inputs = manager.GetInputs();
@@ -34,17 +34,17 @@ public class OpenInventory : MonoBehaviour
         if (isReach && interactAction.triggered && !inventoryOpen)
         {
             
-            inventoryUI.SetActive(true);
+            inventoryUI.Afficher();
             inventoryOpen = true;
         }
         else if (isReach && interactAction.triggered && inventoryOpen)
         {
-            inventoryUI.SetActive(false);
+            inventoryUI.Cacher();
             inventoryOpen = false;
         }
         else if (!isReach && inventoryOpen)
         {
-            inventoryUI.SetActive(false);
+            inventoryUI.Cacher();
             inventoryOpen = false;
         }
     }

@@ -14,7 +14,7 @@ public class CapaciteManager : MonoBehaviour
     [SerializeField] private Inventory inventory;
     private PlayerMoveManager player;
 
-    private GameObject inventoryUI;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +29,7 @@ public class CapaciteManager : MonoBehaviour
         capa_02Action = inputs.actions.FindAction("Capacite_02");
         capa_03Action = inputs.actions.FindAction("Capacite_03");
 
-        inventoryUI = GameObject.Find("Inventory UI");
-        inventoryUI.SetActive(false);
+        
     }
 
     // Update is called once per frame

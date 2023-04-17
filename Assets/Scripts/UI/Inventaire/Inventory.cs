@@ -5,7 +5,13 @@ public class Inventory : MonoBehaviour
     [SerializeField] private InventoryDisplay display;
     [SerializeField] private InventoryData data;
 
+    private GameObject inventoryUI;
 
+    void Start()
+    {
+        inventoryUI = GameObject.Find("Inventory");
+        Cacher();
+    }
 
     private void Awake()
     {
@@ -53,6 +59,16 @@ public class Inventory : MonoBehaviour
         }
 
         return data.items[index];
+    }
+
+    public void Afficher()
+    {
+        inventoryUI.SetActive(true);
+    }
+
+    public void Cacher()
+    {
+        inventoryUI.SetActive(false);
     }
 
 
