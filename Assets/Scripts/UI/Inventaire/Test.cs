@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    [SerializeField] private Item itemToPush, pickedItem;
+    [SerializeField] private Item itemToPush1, itemToPush2, itemToPush3;
 
     private Inventory inventory;
 
@@ -20,12 +20,9 @@ public class Test : MonoBehaviour
     [ContextMenu("Test Push")]
     public void Add()
     {
-        itemToPush = inventory.AddItem(itemToPush);
+        itemToPush1 = inventory.AddItem(itemToPush1);
+        itemToPush2 = inventory.AddItem(itemToPush2);
+        itemToPush3 = inventory.AddItem(itemToPush3);
     }
 
-    [ContextMenu("Test Pick")]
-    public void Pick()
-    {
-        pickedItem = inventory.PickItem(1);
-    }
 }

@@ -13,6 +13,8 @@ public class OpenInventory : MonoBehaviour
     private Inventory inventoryUI;
 
     private bool inventoryOpen;
+
+    private CapaciteManager capaciteManager;
     
 
     // Start is called before the first frame update
@@ -20,6 +22,8 @@ public class OpenInventory : MonoBehaviour
     {
         isReach = false;
         inventoryOpen = false;
+
+        capaciteManager = GameObject.FindWithTag("Player").GetComponent<CapaciteManager>();
 
         inventoryUI = GameObject.Find("Inventory UI").GetComponent<Inventory>();
 
@@ -41,11 +45,13 @@ public class OpenInventory : MonoBehaviour
         {
             inventoryUI.Cacher();
             inventoryOpen = false;
+            capaciteManager.modifierCapacite();
         }
         else if (!isReach && inventoryOpen)
         {
             inventoryUI.Cacher();
             inventoryOpen = false;
+            capaciteManager.modifierCapacite();
         }
     }
 
