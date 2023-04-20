@@ -1,3 +1,5 @@
+//Script d'Axel
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,7 +17,7 @@ public class OpenInventory : MonoBehaviour
     private bool inventoryOpen;
 
     private CapaciteManager capaciteManager;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,7 @@ public class OpenInventory : MonoBehaviour
     {
         if (isReach && interactAction.triggered && !inventoryOpen)
         {
-            
+
             inventoryUI.Afficher();
             inventoryOpen = true;
         }

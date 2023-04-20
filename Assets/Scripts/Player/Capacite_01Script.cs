@@ -1,3 +1,5 @@
+//Script d'Axel
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +22,7 @@ public class Capacite_01Script : MonoBehaviour
     private bool capacite_01Charge = true;
 
     private PlayerMoveManager player;
-    
+
 
 
     void Start()
@@ -53,7 +55,8 @@ public class Capacite_01Script : MonoBehaviour
             capacite_01Charge = false;
 
         }
-        else if (capacite_01Action.triggered){
+        else if (capacite_01Action.triggered)
+        {
             fauxSurPlayer = true;
             // Vérifier s'il y a un objet faux créé précédemment
             if (lastFaux != null)
@@ -69,14 +72,16 @@ public class Capacite_01Script : MonoBehaviour
         }
 
         timeReloadCapacite_01Ecoule += Time.deltaTime;
-        if (timeReloadCapacite_01Ecoule >= timeReloadCapacite_01){
+        if (timeReloadCapacite_01Ecoule >= timeReloadCapacite_01)
+        {
             capacite_01Charge = true;
             uiCapacite_01.CurrentTime = 100;
         }
-        if (!capacite_01Charge){
+        if (!capacite_01Charge)
+        {
             uiCapacite_01.CurrentTime = (int)(timeReloadCapacite_01Ecoule * 100 / timeReloadCapacite_01);
         }
-        
+
     }
 
 
@@ -90,16 +95,16 @@ public class Capacite_01Script : MonoBehaviour
         return direction;
     }
 
-    public bool FauxSurPlayer 
-    { 
-        get 
-        { 
-            return fauxSurPlayer; 
-        } 
-        set 
-        { 
-            fauxSurPlayer = value; 
-        } 
+    public bool FauxSurPlayer
+    {
+        get
+        {
+            return fauxSurPlayer;
+        }
+        set
+        {
+            fauxSurPlayer = value;
+        }
     }
 
 }

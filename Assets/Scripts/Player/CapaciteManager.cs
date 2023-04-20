@@ -1,3 +1,5 @@
+//Script d'Axel
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,7 +40,7 @@ public class CapaciteManager : MonoBehaviour
     [SerializeField] private Inventory inventory;
     private PlayerMoveManager player;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -91,8 +93,8 @@ public class CapaciteManager : MonoBehaviour
             spell_03Front.CurrentTime = 100;
             timerSpell_03 = inventory.GetItem(14).Data.getTimerCapacite;
         }
-        
-        
+
+
     }
 
     // Update is called once per frame

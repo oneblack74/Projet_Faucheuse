@@ -1,3 +1,5 @@
+//Script d'Axel
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +9,7 @@ public class PlayerMoveManager : MonoBehaviour
     [SerializeField] private int vitesse;
     [SerializeField] private int jumpForce;
 
-    
+
 
 
     private Rigidbody2D rb;
@@ -39,7 +41,7 @@ public class PlayerMoveManager : MonoBehaviour
     {
         // deplacement
         Vector2 _moveValue = moveAction.ReadValue<Vector2>();
-        velocity = _moveValue*vitesse*Time.fixedDeltaTime;
+        velocity = _moveValue * vitesse * Time.fixedDeltaTime;
         rb.velocity = new Vector2(velocity[0], rb.velocity.y);
 
         if (_moveValue.x > 0)
@@ -60,14 +62,17 @@ public class PlayerMoveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (jumpAction.triggered){
+        if (jumpAction.triggered)
+        {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
-        if (dir == 1 && GetComponent<SpriteRenderer>().flipX == true){
+        if (dir == 1 && GetComponent<SpriteRenderer>().flipX == true)
+        {
             GetComponent<SpriteRenderer>().flipX = false;
         }
-        else if (dir == -1 && GetComponent<SpriteRenderer>().flipX == false){
+        else if (dir == -1 && GetComponent<SpriteRenderer>().flipX == false)
+        {
             GetComponent<SpriteRenderer>().flipX = true;
         }
     }

@@ -1,15 +1,19 @@
+//Script d'Axel
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Capacites/01", fileName = "Capacite")]
-public class Capacite_01 : Capacite{
+public class Capacite_01 : Capacite
+{
     [SerializeField] private GameObject fauxPrefab;
     [SerializeField] private float fauxSpeed = 10f;
     private PlayerMoveManager player;
     private Transform playerTransform;
 
-    public override void activer() {
+    public override void activer()
+    {
 
         player = GameObject.FindWithTag("Player").GetComponent<PlayerMoveManager>();
         playerTransform = GameObject.FindWithTag("Player").GetComponent<Transform>();
