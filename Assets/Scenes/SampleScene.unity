@@ -1436,6 +1436,7 @@ Transform:
   m_Father: {fileID: 2060055893}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1 &627375391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1573,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &728743437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,7 +2055,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 8
+=======
+  m_RootOrder: 6
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &944143068
 GameObject:
@@ -2974,7 +2981,7 @@ Transform:
   - {fileID: 1454704776}
   - {fileID: 1824727338}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1429034789
 PrefabInstance:
@@ -4757,7 +4764,7 @@ GameObject:
   - component: {fileID: 2072334525}
   - component: {fileID: 2072334526}
   m_Layer: 3
-  m_Name: Ame1
+  m_Name: Ame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4845,6 +4852,7 @@ MonoBehaviour:
   pos: {x: -0.75, y: 0.38, z: 0}
   timeOffset: 0.05
   maxDistance: 0.05
+  dir: 1
 --- !u!1 &2107213561
 GameObject:
   m_ObjectHideFlags: 0

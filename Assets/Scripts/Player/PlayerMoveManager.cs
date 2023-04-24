@@ -21,7 +21,7 @@ public class PlayerMoveManager : MonoBehaviour
 
     private Vector2 velocity = Vector2.zero;
 
-    public int dir = 0;
+    private int dir;
 
 
 
@@ -35,6 +35,8 @@ public class PlayerMoveManager : MonoBehaviour
 
         moveAction = inputs.actions.FindAction("Move");
         jumpAction = inputs.actions.FindAction("Jump");
+
+        dir = 1;
     }
 
     private void FixedUpdate()
@@ -77,5 +79,8 @@ public class PlayerMoveManager : MonoBehaviour
         }
     }
 
+    public virtual int getDir {
+        get { return dir; }
+    }
 
 }

@@ -13,21 +13,26 @@ public class AmeManager : MonoBehaviour
     private Transform target;
     private Vector3 velocity;
     private Vector3 randomPos;
+    private int dir;
+    private Vector3 newPos;
 
     void Start()
-    {
-        target = GameObject.Find("Player").GetComponent<Transform>();
+    {   
+        player = GameObject.Find("Player");
+        target = player.GetComponent<Transform>();
         randomPos = Random.insideUnitCircle.normalized * maxDistance;
+        dir = player.GetComponent<PlayerMoveManager>().getDir;
     }
 
     void Update()
-    {
-        
-        if (Vector3.Distance(transform.position, target.position + pos + randomPos) < 0.0001f)
+    {   
+        dir = player.GetComponent<PlayerMoveManager>().getDir;
+        newPos = new Vector3(pos.x*dir, pos.y, 0);
+        if (Vector3.Distance(transform.position, target.position + newPos + randomPos) < 0.0001f)
         {
             randomPos = Random.insideUnitCircle.normalized * maxDistance;
         }
-        transform.position = Vector3.SmoothDamp(transform.position, target.position + pos + randomPos, ref velocity, timeOffset);
+        transform.position = Vector3.SmoothDamp(transform.position, target.position + newPos + randomPos, ref velocity, timeOffset);
     }
 
     

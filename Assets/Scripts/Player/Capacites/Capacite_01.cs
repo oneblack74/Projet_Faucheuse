@@ -24,7 +24,7 @@ public class Capacite_01 : Capacite
 
 
         // Déplacer l'objet faux dans la direction donnée
-        faux.GetComponent<Rigidbody2D>().velocity = new Vector3(player.dir, 0, 0) * fauxSpeed;
+        faux.GetComponent<Rigidbody2D>().velocity = new Vector3(player.getDir, 0, 0) * fauxSpeed;
 
     }
 }
