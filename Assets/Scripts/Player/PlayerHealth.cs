@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void removeHealth(int health)
+    public void removeHealth(float health)
     {
         if (currentHealth - health > 0)
         {
@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void addHealth(int health)
+    public void addHealth(float health)
     {
         if (currentHealth + health <= maxHealth)
         {
@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void setFullHealth()
+    public void setFullHealth()
     {
         currentHealth = maxHealth;
         bar.setHealth(currentHealth);
