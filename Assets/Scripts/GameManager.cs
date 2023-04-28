@@ -15,8 +15,11 @@ public class GameManager : MonoBehaviour
         if (instance != null)
         {
             Destroy(this);
+            return;
         }
+
         instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public static GameManager GetInstance()
@@ -27,5 +30,15 @@ public class GameManager : MonoBehaviour
     public PlayerInput GetInputs()
     {
         return inputs;
+    }
+
+    public void ChangeScene(string _sceneName)
+    {
+        SceneManager.LoadScene(_sceneName);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
