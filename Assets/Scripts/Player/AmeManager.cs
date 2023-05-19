@@ -34,7 +34,4 @@ public class AmeManager : MonoBehaviour
         }
         transform.position = Vector3.SmoothDamp(transform.position, target.position + newPos + randomPos, ref velocity, timeOffset);
     }
-
-    
-
 }
