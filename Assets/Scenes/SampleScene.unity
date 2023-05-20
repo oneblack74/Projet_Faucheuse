@@ -1079,6 +1079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 470609762}
+  - component: {fileID: 470609763}
   m_Layer: 3
   m_Name: PointAttaque
   m_TagString: Untagged
@@ -1101,6 +1102,18 @@ Transform:
   m_Father: {fileID: 1035630743}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &470609763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470609761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898bbdc96d54311448ed420115a591ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &511895161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,7 +1736,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 627375392}
-  - {fileID: 1676911499}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2446,12 +2458,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1035630740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b43a436dcd29184caa643326a3ecaa8, type: 3}
+  m_Script: {fileID: 11500000, guid: 48b1c02e043ee084983ceda0c2fe3d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointAttaque: {fileID: 470609762}
-  porteeAttaque: 0.75
-  degatsAttaque: 35
+  attaquePortee: 1
+  attaqueDegats: 35
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
@@ -3883,12 +3894,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676911498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.78, y: -6.609822, z: 0.078684896}
+  m_LocalPosition: {x: -7.0304027, y: -3.3106503, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 847118905}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1676911500
 BoxCollider2D:
