@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ennemi : MonoBehaviour
 {
     public int maxHealth = 100;
-    private int currentHealth;
+    [SerializeField] private int currentHealth;
 
     void Start()
     {
@@ -22,5 +22,10 @@ public class Ennemi : MonoBehaviour
 
     private void die() {
         Debug.Log(this.name + " est mort :'(");
+    }
+
+    public int Health
+    {
+        get{return currentHealth;}
     }
 }

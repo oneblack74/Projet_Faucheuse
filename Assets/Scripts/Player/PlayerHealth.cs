@@ -58,4 +58,9 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         bar.setHealth(currentHealth);
     }
+
+    public float Health
+    {
+        get{return currentHealth;}
+    }
 }
