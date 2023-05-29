@@ -33,6 +33,7 @@ public class PlayerMoveManager : MonoBehaviour
         manager = GameManager.GetInstance();
         inputs = manager.GetInputs();
 
+
         moveAction = inputs.actions.FindAction("Move");
         jumpAction = inputs.actions.FindAction("Jump");
 
