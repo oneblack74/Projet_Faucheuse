@@ -48,24 +48,22 @@ public class PlayerMoveManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
-
-        // deplacement
-        Vector2 _moveValue = moveAction.ReadValue<Vector2>();
-        velocity = _moveValue * vitesse * Time.fixedDeltaTime;
-        rb.velocity = new Vector2(velocity[0], rb.velocity.y);
-
-        if (_moveValue.x > 0)
+        if (!VariableGlobale.jeuEnPause)
         {
-            dir = 1;
+            // deplacement
+            Vector2 _moveValue = moveAction.ReadValue<Vector2>();
+            velocity = _moveValue * vitesse * Time.fixedDeltaTime;
+            rb.velocity = new Vector2(velocity[0], rb.velocity.y);
+
+            if (_moveValue.x > 0)
+            {
+                dir = 1;
+            }
+            else if (_moveValue.x < 0)
+            {
+                dir = -1;
+            }
         }
-        else if (_moveValue.x < 0)
-        {
-            dir = -1;
-        }
-
-
-
     }
 
 
@@ -73,21 +71,23 @@ public class PlayerMoveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        estAuSol = Physics2D.OverlapArea(verifierSolGauche.position, verifierSolDroit.position, LayerMask.GetMask("Sol"));
-
-        if (jumpAction.triggered && estAuSol)
+        if (!VariableGlobale.jeuEnPause)
         {
-            rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-        }
+            estAuSol = Physics2D.OverlapArea(verifierSolGauche.position, verifierSolDroit.position, LayerMask.GetMask("Sol"));
 
-        if (dir == 1 && GetComponent<SpriteRenderer>().flipX == true)
-        {
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else if (dir == -1 && GetComponent<SpriteRenderer>().flipX == false)
-        {
-            GetComponent<SpriteRenderer>().flipX = true;
+            if (jumpAction.triggered && estAuSol)
+            {
+                rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            }
+
+            if (dir == 1 && GetComponent<SpriteRenderer>().flipX == true)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (dir == -1 && GetComponent<SpriteRenderer>().flipX == false)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
     }
 

@@ -100,79 +100,82 @@ public class CapaciteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (capa_01Action.triggered && spell_01Charge)
+        if (!VariableGlobale.jeuEnPause)
         {
-            Item item = inventory.GetItem(12);
-            if (item.Data != null)
+            if (capa_01Action.triggered && spell_01Charge)
             {
-                Capacite capacite = item.Data.getCapacite;
-                capacite.activer();
+                Item item = inventory.GetItem(12);
+                if (item.Data != null)
+                {
+                    Capacite capacite = item.Data.getCapacite;
+                    capacite.activer();
 
+                    spell_01Front.CurrentTime = 100;
+                    timerSpell_01Ecoule = 0f;
+                    spell_01Charge = false;
+                }
+            }
+
+            timerSpell_01Ecoule += Time.deltaTime;
+            if (timerSpell_01Ecoule >= timerSpell_01)
+            {
+                spell_01Charge = true;
                 spell_01Front.CurrentTime = 100;
-                timerSpell_01Ecoule = 0f;
-                spell_01Charge = false;
             }
-        }
-
-        timerSpell_01Ecoule += Time.deltaTime;
-        if (timerSpell_01Ecoule >= timerSpell_01)
-        {
-            spell_01Charge = true;
-            spell_01Front.CurrentTime = 100;
-        }
-        if (!spell_01Charge)
-        {
-            spell_01Front.CurrentTime = (int)(timerSpell_01Ecoule * 100 / timerSpell_01);
-        }
-
-        if (capa_02Action.triggered && spell_02Charge)
-        {
-            Item item = inventory.GetItem(13);
-            if (item.Data != null)
+            if (!spell_01Charge)
             {
-                Capacite capacite = item.Data.getCapacite;
-                capacite.activer();
+                spell_01Front.CurrentTime = (int)(timerSpell_01Ecoule * 100 / timerSpell_01);
+            }
 
+            if (capa_02Action.triggered && spell_02Charge)
+            {
+                Item item = inventory.GetItem(13);
+                if (item.Data != null)
+                {
+                    Capacite capacite = item.Data.getCapacite;
+                    capacite.activer();
+
+                    spell_02Front.CurrentTime = 100;
+                    timerSpell_02Ecoule = 0f;
+                    spell_02Charge = false;
+                }
+            }
+
+            timerSpell_02Ecoule += Time.deltaTime;
+            if (timerSpell_02Ecoule >= timerSpell_02)
+            {
+                spell_02Charge = true;
                 spell_02Front.CurrentTime = 100;
-                timerSpell_02Ecoule = 0f;
-                spell_02Charge = false;
             }
-        }
-
-        timerSpell_02Ecoule += Time.deltaTime;
-        if (timerSpell_02Ecoule >= timerSpell_02)
-        {
-            spell_02Charge = true;
-            spell_02Front.CurrentTime = 100;
-        }
-        if (!spell_02Charge)
-        {
-            spell_02Front.CurrentTime = (int)(timerSpell_02Ecoule * 100 / timerSpell_02);
-        }
-
-        if (capa_03Action.triggered && spell_03Charge)
-        {
-            Item item = inventory.GetItem(14);
-            if (item.Data != null)
+            if (!spell_02Charge)
             {
-                Capacite capacite = item.Data.getCapacite;
-                capacite.activer();
-
-                spell_03Front.CurrentTime = 100;
-                timerSpell_03Ecoule = 0f;
-                spell_03Charge = false;
+                spell_02Front.CurrentTime = (int)(timerSpell_02Ecoule * 100 / timerSpell_02);
             }
-        }
 
-        timerSpell_03Ecoule += Time.deltaTime;
-        if (timerSpell_03Ecoule >= timerSpell_03)
-        {
-            spell_03Charge = true;
-            spell_03Front.CurrentTime = 100;
-        }
-        if (!spell_03Charge)
-        {
-            spell_03Front.CurrentTime = (int)(timerSpell_03Ecoule * 100 / timerSpell_03);
+            if (capa_03Action.triggered && spell_03Charge)
+            {
+                Item item = inventory.GetItem(14);
+                if (item.Data != null)
+                {
+                    Capacite capacite = item.Data.getCapacite;
+                    capacite.activer();
+
+                    spell_03Front.CurrentTime = 100;
+                    timerSpell_03Ecoule = 0f;
+                    spell_03Charge = false;
+                }
+            }
+
+            timerSpell_03Ecoule += Time.deltaTime;
+            if (timerSpell_03Ecoule >= timerSpell_03)
+            {
+                spell_03Charge = true;
+                spell_03Front.CurrentTime = 100;
+            }
+            if (!spell_03Charge)
+            {
+                spell_03Front.CurrentTime = (int)(timerSpell_03Ecoule * 100 / timerSpell_03);
+            }
         }
     }
 }

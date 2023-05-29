@@ -29,8 +29,11 @@ public class UIcapacite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        percentage = (float) currentTime / maxTime;
-        image.fillAmount = percentage;
+        if (!VariableGlobale.jeuEnPause)
+        {
+            percentage = (float) currentTime / maxTime;
+            image.fillAmount = percentage;
+        }
     }
 
     public int CurrentTime

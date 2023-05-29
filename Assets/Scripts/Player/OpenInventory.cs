@@ -37,6 +37,7 @@ public class OpenInventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // vérifier d'ouvrir ou fermer l'inventaire
         if (isReach && interactAction.triggered && !inventoryOpen)
         {
 
@@ -54,6 +55,17 @@ public class OpenInventory : MonoBehaviour
             inventoryUI.Cacher();
             inventoryOpen = false;
             capaciteManager.modifierCapacite();
+        }
+
+
+        // vérifier si l'inventaire est ouvert et mettre la variable du jeu pause = true
+        if (inventoryOpen)
+        {
+            VariableGlobale.jeuEnPause = true;
+        }
+        else
+        {
+            VariableGlobale.jeuEnPause = false;
         }
     }
 

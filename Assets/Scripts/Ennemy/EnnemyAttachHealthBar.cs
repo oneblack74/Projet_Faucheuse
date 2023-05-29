@@ -17,10 +17,13 @@ public class EnnemyAttachHealthBar : MonoBehaviour
 
     void LateUpdate()
     {
-        // Convertir la position de l'ennemi en position de l'écran
-        Vector3 screenPosition = mainCamera.WorldToScreenPoint(enemy.position);
+        if (!VariableGlobale.jeuEnPause)
+        {
+            // Convertir la position de l'ennemi en position de l'écran
+            Vector3 screenPosition = mainCamera.WorldToScreenPoint(enemy.position);
 
-        // Déplacer la barre de vie au-dessus de l'ennemi avec un décalage vertical
-        transform.position = new Vector3(screenPosition.x, screenPosition.y + offsetY, screenPosition.z);
+            // Déplacer la barre de vie au-dessus de l'ennemi avec un décalage vertical
+            transform.position = new Vector3(screenPosition.x, screenPosition.y + offsetY, screenPosition.z);
+        }
     }
 }

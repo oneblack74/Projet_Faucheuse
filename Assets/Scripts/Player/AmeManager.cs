@@ -26,12 +26,15 @@ public class AmeManager : MonoBehaviour
 
     void Update()
     {   
-        dir = player.GetComponent<PlayerMoveManager>().getDir;
-        newPos = new Vector3(pos.x*dir, pos.y, 0);
-        if (Vector3.Distance(transform.position, target.position + newPos + randomPos) < 0.0001f)
+        if (!VariableGlobale.jeuEnPause)
         {
-            randomPos = Random.insideUnitCircle.normalized * maxDistance;
+            dir = player.GetComponent<PlayerMoveManager>().getDir;
+            newPos = new Vector3(pos.x*dir, pos.y, 0);
+            if (Vector3.Distance(transform.position, target.position + newPos + randomPos) < 0.0001f)
+            {
+                randomPos = Random.insideUnitCircle.normalized * maxDistance;
+            }
+            transform.position = Vector3.SmoothDamp(transform.position, target.position + newPos + randomPos, ref velocity, timeOffset);
         }
-        transform.position = Vector3.SmoothDamp(transform.position, target.position + newPos + randomPos, ref velocity, timeOffset);
     }
 }

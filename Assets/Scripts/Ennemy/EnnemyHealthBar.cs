@@ -22,7 +22,10 @@ public class EnnemyHealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float pourcentage = ennemy.Health / 100f;
-        image.fillAmount = pourcentage;
+        if (!VariableGlobale.jeuEnPause)
+        {
+            float pourcentage = ennemy.Health / 100f;
+            image.fillAmount = pourcentage;
+        }
     }
 }

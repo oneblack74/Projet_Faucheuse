@@ -23,14 +23,17 @@ public class EnnemyPath : MonoBehaviour
 
     void Update()
     {
-        Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-
-        //Si on atteint quasiment la dest, on change de target
-        if (Vector3.Distance(transform.position, target.position) < 0.3f)
+        if (!VariableGlobale.jeuEnPause)
         {
-            dest = (dest + 1) % path.Length;
-            target = path[dest];
+            Vector3 direction = target.position - transform.position;
+            transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+
+            //Si on atteint quasiment la dest, on change de target
+            if (Vector3.Distance(transform.position, target.position) < 0.3f)
+            {
+                dest = (dest + 1) % path.Length;
+                target = path[dest];
+            }
         }
     }
 

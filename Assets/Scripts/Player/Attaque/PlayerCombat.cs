@@ -31,9 +31,12 @@ public class PlayerCombat : MonoBehaviour
     }
 
     void Update()
-    {
-        if (attackAction.triggered) {
-            Attaque();
+    {   
+        if (!VariableGlobale.jeuEnPause)
+        {
+            if (attackAction.triggered) {
+                Attaque();
+            }
         }
     }
 

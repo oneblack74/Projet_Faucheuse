@@ -16,18 +16,21 @@ public class PlayerHealth : MonoBehaviour
     }
 
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
+    {   
+        if (!VariableGlobale.jeuEnPause)
         {
-            removeHealth(10);
-        }
-        else if (Input.GetKeyDown(KeyCode.P))
-        {
-            addHealth(10);
-        }
-        else if (Input.GetKeyDown(KeyCode.I))
-        {
-            setFullHealth();
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                removeHealth(10);
+            }
+            else if (Input.GetKeyDown(KeyCode.P))
+            {
+                addHealth(10);
+            }
+            else if (Input.GetKeyDown(KeyCode.I))
+            {
+                setFullHealth();
+            }
         }
     }
 
