@@ -11,6 +11,8 @@ public class EnnemyPath : MonoBehaviour
     [SerializeField] private Transform[] path;
     [SerializeField] private float damageOnPlayerCollision = 10;
     [SerializeField] private float timeBetweenHit = 1;
+    [SerializeField] private Sprite[] sprite;
+    private SpriteRenderer image;
     private bool hasDmgPlayer = false;
 
     private Transform target;
@@ -19,6 +21,7 @@ public class EnnemyPath : MonoBehaviour
     void Start()
     {
         target = path[0];
+        image = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -33,6 +36,16 @@ public class EnnemyPath : MonoBehaviour
             {
                 dest = (dest + 1) % path.Length;
                 target = path[dest];
+            }
+            
+            // modifier l'image (droite ou gauche)
+            if (target.position.x >= transform.position.x)
+            {
+                image.sprite = sprite[0];
+            }
+            else
+            {
+                image.sprite = sprite[1];
             }
         }
     }

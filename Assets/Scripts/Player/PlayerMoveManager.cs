@@ -11,6 +11,8 @@ public class PlayerMoveManager : MonoBehaviour
 
     [SerializeField] private bool estAuSol;
 
+    [SerializeField] private Animator animator;
+
     
     private Transform verifierSolGauche;
     private Transform verifierSolDroit;
@@ -77,6 +79,7 @@ public class PlayerMoveManager : MonoBehaviour
 
             if (jumpAction.triggered && estAuSol)
             {
+                animator.SetTrigger("Jump");
                 rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             }
 
