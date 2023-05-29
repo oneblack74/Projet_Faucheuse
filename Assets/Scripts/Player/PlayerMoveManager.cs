@@ -9,8 +9,11 @@ public class PlayerMoveManager : MonoBehaviour
     [SerializeField] private int vitesse;
     [SerializeField] private int jumpForce;
 
+    [SerializeField] private bool estAuSol;
 
-
+    
+    private Transform verifierSolGauche;
+    private Transform verifierSolDroit;
 
     private Rigidbody2D rb;
 
@@ -38,10 +41,15 @@ public class PlayerMoveManager : MonoBehaviour
         jumpAction = inputs.actions.FindAction("Jump");
 
         dir = 1;
+
+        verifierSolGauche = GameObject.Find("VerifierSolGauche").GetComponent<Transform>();
+        verifierSolDroit = GameObject.Find("VerifierSolDroit").GetComponent<Transform>();
     }
 
     private void FixedUpdate()
     {
+        
+
         // deplacement
         Vector2 _moveValue = moveAction.ReadValue<Vector2>();
         velocity = _moveValue * vitesse * Time.fixedDeltaTime;
@@ -65,7 +73,10 @@ public class PlayerMoveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (jumpAction.triggered)
+
+        estAuSol = Physics2D.OverlapArea(verifierSolGauche.position, verifierSolDroit.position, LayerMask.GetMask("Sol"));
+
+        if (jumpAction.triggered && estAuSol)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
