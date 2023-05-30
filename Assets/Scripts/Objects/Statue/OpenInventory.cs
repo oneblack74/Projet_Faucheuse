@@ -84,4 +84,9 @@ public class OpenInventory : MonoBehaviour
             isReach = false;
         }
     }
+
+    public bool IsReach
+    {
+        get{return isReach;}
+    }
 }

@@ -33,10 +33,20 @@ public class SaveData : MonoBehaviour
 
         data = JsonUtility.FromJson<Data>(saveData);
     }
+
+    public Data GetData
+    {
+        get{return data;}
+    }
 }
 
 [System.Serializable]
 public class Data
 {
     public int idStatue;
+
+    public int IdStatue
+    {
+        set{idStatue = value;}
+    }
 }
