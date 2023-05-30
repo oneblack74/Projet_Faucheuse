@@ -204,6 +204,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  nbSouldDrop: 5
+  soulObject: {fileID: 4381000090097425629, guid: 9508c8b9d2b702f40a829f8ffae57103, type: 3}
 --- !u!50 &2000568027767379047
 Rigidbody2D:
   serializedVersion: 4

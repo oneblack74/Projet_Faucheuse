@@ -23,6 +23,7 @@ public class SpawnSlime : MonoBehaviour
             {
                 spawnSlime();
             }
+
         }
     }
 
