@@ -8,10 +8,10 @@ public class EnnemyAttachHealthBar : MonoBehaviour
     [SerializeField] private float offsetY = 1f;
 
     private Camera mainCamera;
-    
+
     void Start()
     {
-        enemy = GameObject.Find("EnnemyTestGraphics").GetComponent<Transform>();
+        enemy = transform.parent.parent.GetComponent<Transform>();
         mainCamera = Camera.main;
     }
 

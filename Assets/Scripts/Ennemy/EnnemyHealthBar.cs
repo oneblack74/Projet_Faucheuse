@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class EnnemyHealthBar : MonoBehaviour
 {
-    
+
     private Ennemi ennemy;
 
 
@@ -13,8 +13,8 @@ public class EnnemyHealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        ennemy = GameObject.Find("EnnemyTestGraphics").GetComponent<Ennemi>();
+
+        ennemy = transform.parent.parent.GetComponent<Ennemi>();
         image = GetComponent<Image>();
 
     }

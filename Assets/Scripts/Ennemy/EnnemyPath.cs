@@ -20,6 +20,10 @@ public class EnnemyPath : MonoBehaviour
 
     void Start()
     {
+        path[0] = GameObject.Find("SlimePath1").GetComponent<Transform>();
+        path[1] = GameObject.Find("SlimePath2").GetComponent<Transform>();
+        path[2] = GameObject.Find("SlimePath3").GetComponent<Transform>();
+        path[3] = GameObject.Find("SlimePath4").GetComponent<Transform>();
         target = path[0];
         image = GetComponent<SpriteRenderer>();
     }
@@ -37,7 +41,7 @@ public class EnnemyPath : MonoBehaviour
                 dest = (dest + 1) % path.Length;
                 target = path[dest];
             }
-            
+
             // modifier l'image (droite ou gauche)
             if (target.position.x >= transform.position.x)
             {
