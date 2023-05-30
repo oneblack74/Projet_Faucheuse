@@ -12,7 +12,7 @@ public class StatueAttacheUI : MonoBehaviour
 
     void Start()
     {
-        statue = GameObject.Find("Statue").GetComponent<Transform>();
+        statue = transform.parent.parent;
         mainCamera = Camera.main;
     }
 

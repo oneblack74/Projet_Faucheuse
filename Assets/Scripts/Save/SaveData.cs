@@ -9,10 +9,6 @@ public class SaveData : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            Sauvegarder();
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
             Charger();
         }
     }

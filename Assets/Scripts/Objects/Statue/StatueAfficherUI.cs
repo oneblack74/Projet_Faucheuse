@@ -7,7 +7,7 @@ public class StatueAfficherUI : MonoBehaviour
     void Start()
     {
         inventory = GetComponent<OpenInventory>();
-        statueUI = GameObject.Find("UIStatue");
+        statueUI = transform.GetChild(0).GetChild(0).gameObject;
     }
 
     void Update()
