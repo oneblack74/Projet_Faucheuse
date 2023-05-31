@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4381000090097425627}
   - component: {fileID: 4381000090097425628}
   - component: {fileID: 7833715736778992078}
-  - component: {fileID: 8771423966653436195}
+  - component: {fileID: 2913537779824839603}
   m_Layer: 9
   m_Name: Soul (changer image)
   m_TagString: Untagged
@@ -170,7 +170,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.0018843266}
   serializedVersion: 2
   m_Radius: 0.11006031
---- !u!50 &8771423966653436195
+--- !u!50 &2913537779824839603
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -189,10 +189,10 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 264
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 759
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
