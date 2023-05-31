@@ -5745,6 +5745,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  nbSouldDrop: 0
+  soulObject: {fileID: 0}
 --- !u!224 &1707873733 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1733879984435779738, guid: a1900f82a52c5ae4da0181fa8f58f195, type: 3}
