@@ -15,24 +15,6 @@ public class PlayerHealth : MonoBehaviour
         bar.setMaxHealth(maxHealth);
     }
 
-    void Update()
-    {
-        if (!VariableGlobale.jeuEnPause)
-        {
-            // if (Input.GetKeyDown(KeyCode.O))
-            // {
-            //     removeHealth(10);
-            // }
-            // else if (Input.GetKeyDown(KeyCode.P))
-            // {
-            //     addHealth(10);
-            // }
-            // else if (Input.GetKeyDown(KeyCode.I))
-            // {
-            //     setFullHealth();
-            // }
-        }
-    }
 
     public void removeHealth(float health)
     {
@@ -62,8 +44,21 @@ public class PlayerHealth : MonoBehaviour
         bar.setHealth(currentHealth);
     }
 
+    public void UpdateHealth()
+    {
+        bar.setHealth(currentHealth);
+        bar.setMaxHealth(maxHealth);
+    }
+
     public float Health
     {
         get { return currentHealth; }
+        set{currentHealth = value;}
+    }
+
+    public float MaxHealth
+    {
+        get { return maxHealth; }
+        set{maxHealth = value;}
     }
 }

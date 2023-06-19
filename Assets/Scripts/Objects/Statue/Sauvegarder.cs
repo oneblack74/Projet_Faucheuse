@@ -31,4 +31,9 @@ public class Sauvegarder : MonoBehaviour
             saveData.Sauvegarder();
         }
     }
+
+    public int IdStatue
+    {
+        get{return idStatue;}
+    }
 }
