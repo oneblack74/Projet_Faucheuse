@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c967a866dce15e54996cf701419c20fa, type: 3}
-  m_Name: Capacite_01
+  m_Script: {fileID: 11500000, guid: d5364b5ac85c52d46b3b1f99fc189697, type: 3}
+  m_Name: Regeneration
   m_EditorClassIdentifier: 
-  aCouldown: 1
-  fauxPrefab: {fileID: 6694933514814537892, guid: bf5046ead5cd75a41866249b8dc4b684, type: 3}
-  fauxSpeed: 10
+  aCouldown: 0

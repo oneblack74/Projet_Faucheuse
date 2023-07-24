@@ -20,6 +20,9 @@ public class CapaciteManager : MonoBehaviour
     private float timerSpell_01;
     private float timerSpell_01Ecoule;
     private bool spell_01Charge = true;
+    private bool active = false;
+    private Item item1;
+    private Capacite capacite1;
 
     //spell 2:
     private GameObject spell_02;
@@ -66,6 +69,8 @@ public class CapaciteManager : MonoBehaviour
         spell_03 = GameObject.Find("Spell_03");
         spell_03Front = spell_03.transform.Find("Frontground").gameObject.GetComponent<UIcapacite>();
         spell_03Back = spell_03.transform.Find("Background").gameObject.GetComponent<UIcapaciteBackground>();
+
+        modifierCapacite();
     }
 
     public void modifierCapacite()
@@ -76,6 +81,8 @@ public class CapaciteManager : MonoBehaviour
             spell_01Front.UpdateImage(inventory.GetItem(12).Data.getIcon);
             spell_01Front.CurrentTime = 100;
             timerSpell_01 = inventory.GetItem(12).Data.getTimerCapacite;
+            item1 = inventory.GetItem(12);
+            capacite1 = item1.Data.getCapacite;
         }
 
         if (inventory.GetItem(13).Data != null)
@@ -102,19 +109,34 @@ public class CapaciteManager : MonoBehaviour
     {
         if (!VariableGlobale.jeuEnPause)
         {
-            if (capa_01Action.triggered && spell_01Charge)
+            if (capa_01Action.triggered)
             {
-                Item item = inventory.GetItem(12);
-                if (item.Data != null)
+
+                if (!capacite1.ACouldown && !active)
                 {
-                    Capacite capacite = item.Data.getCapacite;
-                    capacite.activer();
+                    active = true;
+                }
+                else if (!capacite1.ACouldown && active)
+                {
+                    active = false;
+                }
+                if (spell_01Charge)
+                {
+                            
+                    capacite1.activer();
 
                     spell_01Front.CurrentTime = 100;
                     timerSpell_01Ecoule = 0f;
                     spell_01Charge = false;
                 }
             }
+                
+            if (active)
+            {
+                capacite1.activer();
+            }
+
+            
 
             timerSpell_01Ecoule += Time.deltaTime;
             if (timerSpell_01Ecoule >= timerSpell_01)

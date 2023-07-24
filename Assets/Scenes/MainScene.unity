@@ -5376,10 +5376,10 @@ MonoBehaviour:
     data: {fileID: 11400000, guid: 47fd4139db202ff45b4599c8b9d33425, type: 2}
   itemToPush2:
     count: 1
-    data: {fileID: 11400000, guid: ec25befa69d01c74bb458b93326610a2, type: 2}
+    data: {fileID: 11400000, guid: 264397eca36522b459ec10e38c5ba7b8, type: 2}
   itemToPush3:
     count: 1
-    data: {fileID: 11400000, guid: 8aa6c0fc24536bc4596ef6de1d8dc21c, type: 2}
+    data: {fileID: 11400000, guid: 264397eca36522b459ec10e38c5ba7b8, type: 2}
 --- !u!114 &1454704781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6524,6 +6524,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     idStatue: 0
+    maxHealthPlayer: 0
+    healthPlayer: 0
+    soulCount: 0
 --- !u!4 &1981178723
 Transform:
   m_ObjectHideFlags: 0
