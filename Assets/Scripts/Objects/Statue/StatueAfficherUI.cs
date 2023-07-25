@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class StatueAfficherUI : MonoBehaviour
 {
-    private OpenInventory inventory;
+    private Sauvegarder sauvegarder;
     private GameObject statueUI;
     void Start()
     {
-        inventory = GetComponent<OpenInventory>();
+        sauvegarder = GetComponent<Sauvegarder>();
         statueUI = transform.GetChild(0).GetChild(0).gameObject;
     }
 
     void Update()
     {
-        if (inventory.IsReach)
+        if (sauvegarder.IsReach)
         {
             statueUI.SetActive(true);
         }

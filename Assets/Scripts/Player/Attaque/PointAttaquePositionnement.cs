@@ -15,7 +15,7 @@ public class PointAttaquePositionnement : MonoBehaviour
         player = GameObject.Find("Player");
         positionPlayer = player.GetComponent<Transform>();
         decallageDefaut = transform.position - positionPlayer.position;
-        Debug.Log(decallageDefaut);
+        //Debug.Log(decallageDefaut);
     }
 
     public void actualiserPositionPointAttaque() {
