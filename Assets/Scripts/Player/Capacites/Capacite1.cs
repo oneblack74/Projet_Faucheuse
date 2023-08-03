@@ -1,6 +1,7 @@
 // script Axel
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Capacite1 : MonoBehaviour
 {
@@ -16,6 +17,17 @@ public class Capacite1 : MonoBehaviour
     private bool spellCharge;
     // etat: 0 --> faux pas lancé | 1 --> faux lancé
     private int etat = 0;
+
+    // prefab
+    [SerializeField] private GameObject fauxPrefab;
+    [SerializeField] private float fauxSpeed = 10f;
+    private GameObject lastFaux;
+    [SerializeField] private float dureeTeleportation = 3f;
+    private float timerTeleportation;
+
+    
+
+
 
     void Start()
     {
@@ -54,6 +66,17 @@ public class Capacite1 : MonoBehaviour
         }
         else if (etat == 1)
         {
+            timerTeleportation += Time.deltaTime;
+            if (timerTeleportation >= dureeTeleportation)
+            {
+                timerTeleportation = 0f;
+                if (lastFaux != null)
+                {
+                    lastFaux.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                }
+                
+            }
+
             if (timerEcoule >= timerEtat1)
             {
                 ramenerFaux();
@@ -66,16 +89,44 @@ public class Capacite1 : MonoBehaviour
 
     private void lancerFaux()
     {
-        Debug.Log("lancer la faux");
+        GameObject faux = Instantiate(fauxPrefab, transform.position, Quaternion.identity);
+
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        // Convertir la position de la souris en un point dans l'espace 2D
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreenPosition.x, mouseScreenPosition.y, transform.position.z));
+        mouseWorldPosition.z = 0;
+        // Obtenir la direction entre le joueur et la position de la souris
+        Vector3 launchDirection = (mouseWorldPosition - transform.position).normalized;
+
+        faux.GetComponent<Rigidbody2D>().velocity = launchDirection * fauxSpeed;
+
+        lastFaux = faux;
+        
     }
 
     private void teleportation()
     {
-        Debug.Log("teleportation");
+
+        if (lastFaux != null)
+        {
+            // Déplacer le joueur à la position de l'objet faux créé précédemment
+            transform.position = lastFaux.transform.position;
+
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+            // Détruire l'objet faux créé précédemment
+            Destroy(lastFaux);
+        }
     }
 
     private void ramenerFaux()
     {
         Debug.Log("ramener la faux");
+
+        if (lastFaux != null)
+        {
+            Destroy(lastFaux);
+        }
     }
+
 }

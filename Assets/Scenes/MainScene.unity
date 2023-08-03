@@ -1781,8 +1781,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: 0}
-  timerEtat0: 5
-  timerEtat1: 3
+  timerEtat0: 1
+  timerEtat1: 5
+  fauxPrefab: {fileID: 6694933514814537892, guid: bf5046ead5cd75a41866249b8dc4b684, type: 3}
+  fauxSpeed: 10
+  dureeTeleportation: 1
 --- !u!1 &1074484514
 GameObject:
   m_ObjectHideFlags: 0
